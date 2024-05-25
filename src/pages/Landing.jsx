@@ -1,5 +1,5 @@
-import logo from '../assets/css/logo.svg';
-import mainImg from '../assets/css/main.svg';
+import logo from '../assets/images/logo.svg';
+import mainImg from '../assets/images/main.svg';
 
 const Landing = () => {
   return <div>Landing</div>;
