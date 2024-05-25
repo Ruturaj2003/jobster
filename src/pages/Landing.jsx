@@ -1,11 +1,12 @@
-import logo from '../assets/images/logo.svg';
+import { Link } from 'react-router-dom';
 import mainImg from '../assets/images/main.svg';
+import { Logo } from '../components';
 
 const Landing = () => {
   return (
     <main>
       <nav>
-        <img src={logo} alt="Logo" className="logo" />
+        <Logo></Logo>
       </nav>
       <div className="container page">
         {/* Info */}
@@ -20,9 +21,11 @@ const Landing = () => {
             pope? I've been there. My folks were always on me to groom myself
             and wear underpants. What am I, the pope?
           </p>
-          <button className="btn btn-hero">Login/Register</button>
+          <Link to={'/register'} className="btn btn-hero">
+            Login/Register
+          </Link>
         </div>
-        <img src={mainImg} alt="Job Hunt" className="img main-img" />
+        <img src={mainImg} alt="Job Hunt" className="  img main-img" />
       </div>
     </main>
   );
