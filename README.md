@@ -1,19 +1,3 @@
-#### 1) Spring Cleaning
-
-- in src remove
-- App.css
-- App.test.js
-- logo.svg
-- reportWebVitals.js
-- setupTests.js
-- fix App.js and index.js
-
-#### 2) Title and Favicon
-
-- change title in public/index.html
-- replace favicon.ico in public
-- resource [Generate Favicons](https://favicon.io/)
-
 #### 3) Normalize.css and Global Styles
 
 - CSS in JS (styled-components)
