@@ -32,7 +32,11 @@ const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(values);
+    const { name, email, password, isMember } = values;
+    if (!email || !password || (!isMember && !name)) {
+      console.log('Please Fill out the form');
+      return;
+    }
   };
 
   return (
