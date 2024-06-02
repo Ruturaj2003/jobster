@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { FaAlignLeft, FaCaretDown } from 'react-icons/fa6';
 import Logo from './Logo';
-import { toggleSidebar } from '../features/userSlice';
+import { logoutUser, toggleSidebar } from '../features/userSlice';
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -45,7 +45,7 @@ const Navbar = () => {
               type="button"
               className="dropdown-btn"
               onClick={() => {
-                console.log('logout user');
+                dispatch(logoutUser());
               }}
             >
               Logout

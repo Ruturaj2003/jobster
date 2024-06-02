@@ -9,13 +9,21 @@ import {
   SharedLayout,
   Stats,
 } from './pages/Dashboard';
+import ProtectedRoute from './pages/ProtectedRoute';
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<SharedLayout></SharedLayout>}>
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <SharedLayout></SharedLayout>
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<Stats></Stats>}></Route>
             <Route path="all-jobs" element={<AllJobs></AllJobs>} />
             <Route path="add-job" element={<AddJob></AddJob>} />
