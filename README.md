@@ -1,27 +1,3 @@
-#### 41) Small Sidebar - Toggle
-
-SmallSidebar.js;
-
-```js
-import { toggleSidebar } from '../features/user/userSlice';
-
-
-const { isSidebarOpen } = useSelector((store) => store.user);
-  const dispatch = useDispatch();
-  const toggle = () => {
-    dispatch(toggleSidebar());
-  };
-
-return (
-  <div className={isSidebarOpen ? 'sidebar-container show-sidebar' : 'sidebar-container'}>
-    <div className='content'>
-        <button type='button' className='close-btn' onClick={toggle}>
-          <FaTimes />
-        </button>
-
-);
-```
-
 #### 42) Setup Links
 
 - create utils/links.js
