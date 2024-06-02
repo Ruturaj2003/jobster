@@ -1,4 +1,4 @@
-import { FaHome, FaUserCircle } from 'react-icons/fa';
+import { FaUserCircle } from 'react-icons/fa';
 import Wrapper from '../assets/wrappers/Navbar';
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
