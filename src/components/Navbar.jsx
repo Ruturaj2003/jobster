@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <Wrapper>
       <div className="nav-center">
-        <button type="button" className="toggle-btn" onClick={() => toggle}>
+        <button type="button" className="toggle-btn" onClick={() => toggle()}>
           <FaAlignLeft></FaAlignLeft>
         </button>
         <div className="">
