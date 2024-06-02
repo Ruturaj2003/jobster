@@ -4,51 +4,55 @@ import { useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { FaAlignLeft, FaCaretDown } from 'react-icons/fa6';
 import Logo from './Logo';
+import { toggleSidebar } from '../features/userSlice';
+import { useState } from 'react';
 
 const Navbar = () => {
+  const [showLogout, setShowLogout] = useState(false);
+
   const { user } = useSearchParams((store) => store.user);
+
   const dispatch = useDispatch();
+
+  const toggle = () => {
+    dispatch(toggleSidebar());
+  };
+
   return (
     <Wrapper>
       <div className="nav-center">
-        <button
-          type="button"
-          className="toggle-btn"
-          onClick={() => console.log('toggle sidebar')}
-        >
+        <button type="button" className="toggle-btn" onClick={() => toggle}>
           <FaAlignLeft></FaAlignLeft>
         </button>
-      </div>
-      <div className="">
-        <Logo></Logo>
-        <h3 className="logo-text">Dashboard</h3>
-      </div>
-      <div className="btn-container">
-        <button
-          className="btn"
-          type="button"
-          onClick={() => {
-            console.log('toggle logot dropdown');
-          }}
-        >
-          <FaUserCircle></FaUserCircle>
-          {user?.name}
-          <FaCaretDown></FaCaretDown>
-        </button>
-        <div className="dropdown show-dropdown">
+        <div className="">
+          <Logo></Logo>
+          <h3 className="logo-text">Dashboard</h3>
+        </div>
+        <div className="btn-container">
           <button
+            className="btn"
             type="button"
-            className="dropdown-btn"
             onClick={() => {
-              console.log('logout user');
+              setShowLogout(!showLogout);
             }}
           >
-            Logout
+            <FaUserCircle></FaUserCircle>
+            {user?.name}
+            <FaCaretDown></FaCaretDown>
           </button>
+          <div className={showLogout ? 'dropdown show-dropdown' : 'dropdown'}>
+            <button
+              type="button"
+              className="dropdown-btn"
+              onClick={() => {
+                console.log('logout user');
+              }}
+            >
+              Logout
+            </button>
+          </div>
         </div>
       </div>
-
-      <FaHome></FaHome>
     </Wrapper>
   );
 };
