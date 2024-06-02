@@ -1,5 +1,3 @@
-````
-
 #### 47) Update User - Complete
 
 ###### Update USER
@@ -44,7 +42,7 @@ export const updateUser = createAsyncThunk(
       state.isLoading = false;
       toast.error(payload);
     },
-````
+```
 
 Profile.js
 
