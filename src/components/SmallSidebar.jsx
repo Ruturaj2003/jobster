@@ -40,6 +40,7 @@ const SmallSideBar = () => {
                   }
                   key={id}
                   onClick={toggle}
+                  end
                 >
                   <span className="icon">{icon}</span>
                   {text}
