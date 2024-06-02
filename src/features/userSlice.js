@@ -1,7 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import customFetch from '../utils/axios';
-import { getUserFromLocalStorage } from '../utils/localStorage';
+import {
+  addUserToLocalStorage,
+  getUserFromLocalStorage,
+} from '../utils/localStorage';
 
 const initialState = {
   isLoading: false,
@@ -61,25 +64,25 @@ const userSlice = createSlice({
       .addCase(loginUser.rejected, (state, { payload }) => {
         state.isLoading = false;
         toast.error(payload);
-      })
-      .addCase(updateUser.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(updateUser.fulfilled, (state, { payload }) => {
-        const { user } = payload;
-        state.isLoading = false;
-        state.user = user;
-        addUserToLocalStorage(user);
-
-        toast.success(`User Updated!`);
-      })
-      .addCase(updateUser.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        toast.error(payload);
-      })
-      .addCase(clearStore.rejected, () => {
-        toast.error('There was an error..');
       });
+    // .addCase(updateUser.pending, (state) => {
+    //   state.isLoading = true;
+    // })
+    // .addCase(updateUser.fulfilled, (state, { payload }) => {
+    //   const { user } = payload;
+    //   state.isLoading = false;
+    //   state.user = user;
+    //   addUserToLocalStorage(user);
+
+    //   toast.success(`User Updated!`);
+    // })
+    // .addCase(updateUser.rejected, (state, { payload }) => {
+    //   state.isLoading = false;
+    //   toast.error(payload);
+    // })
+    // .addCase(clearStore.rejected, () => {
+    //   toast.error('There was an error..');
+    // });
   },
 });
 
