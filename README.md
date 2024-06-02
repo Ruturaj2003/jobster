@@ -1,33 +1,3 @@
-#### 33) Shared Layout CSS
-
-- import Wrappers in BigSidebar,SmallSidebar and Navbar
-
-#### 34) React Icons
-
-[React Icons](https://react-icons.github.io/react-icons/)
-
-```sh
-npm install react-icons
-```
-
-```js
-Navbar.js
-
-import Wrapper from '../assets/wrappers/Navbar'
-import {FaHome} from 'react-icons/fa'
-const Navbar = () => {
-  return (
-    <Wrapper>
-      <h4>navbar</h4>
-      <FaHome>
-    </Wrapper>
-  )
-}
-
-export default Navbar
-
-```
-
 #### 35) Navbar Structure
 
 Navbar.js;
